@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+    <main>
+        <section class="crudDiv py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="text-center position-relative ">Bookmarker</h1>
+                    </div>
+                    <div class="col-12 mt-5 mb-3">
+                        <div class="inner py-4">
+                            <div class="title text-center">
+                                <h2 class="fs-3 fw-bold"><i class="fas fa-bookmark fs-2 ms-3 me-3"></i>
+                                    Bookmark your favorite sites
+                                    <i class="fas fa-bookmark fs-2 ms-3 me-3"></i>
+                                </h2>
+                            </div>
+                            <div class="dataForm">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="siteName" class="form-label fw-bold"><i
+                                                class="fad fa-book"></i> Site Name</label>
+                                        <input onblur="validateBookmarkLink(/^[\w\s]{5,25}$/,this.value,this)" type="text" class="form-control" id="siteName"
+                                            placeholder="Bookmark Name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="siteUrl" class="form-label fw-bold"><i
+                                                class="fad fa-link"></i> Site URL</label>
+                                        <input type="url" onblur="validateBookmarkLink(/^(https?:\/\/)?(([a-z\d]([a-z\d-]*[a-z\d])*)\.)+([a-z]{2,})(:\d+)?(\/[-a-z\d%_.~+]*)*(\?[;&a-z\d%_.~+=-]*)?(#[-a-z\d_]*)?$/i,this.value,this)" class="form-control" id="siteUrl"
+                                            placeholder="Website URL">
+                                    </div>
+                                </form>
+                                <div class="text-center">
+                                    <button onclick="addSite()" class="btn btn-primary text-center px-5">Sumbit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="tableContent text-center fw-bold">
+            <div class="container">
+                <div class="row">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <td>Index</td>
+                                <td>Website Name</td>
+                                <td>Visite</td>
+                                <td>Delete</td>
+                            </tr>
+                        </thead>
+                        <tbody id="bodyContent">
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
