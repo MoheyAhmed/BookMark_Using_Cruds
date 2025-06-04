@@ -21,6 +21,10 @@ function addSite() {
     displayWebsites(allWebsites);
     localStorage.setItem("allwebsitesLinks", JSON.stringify(allWebsites));
     clearData();
+    siteName.classList.remove('is-valid');
+    siteName.classList.remove('is-invalid');
+    siteUrl.classList.remove('is-valid');
+    siteUrl.classList.remove('is-invalid');
   } else {
     Swal.fire({
       title: "Bad job!",
